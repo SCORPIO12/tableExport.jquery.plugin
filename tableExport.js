@@ -28,8 +28,8 @@ THE SOFTWARE.*/
 						ignoreColumn: [],
 						tableName:'yourTableName',
 						type:'csv',
-						pdfFontSize:14,
-						pdfLeftMargin:20,
+						pdfFontSize:8,
+						pdfLeftMargin:5,
 						escape:'true',
 						htmlContent:'false',
 						consoleLog:'false'
@@ -298,8 +298,8 @@ THE SOFTWARE.*/
 						$(this).filter(':visible').find('th').each(function(index,data) {
 							if ($(this).css('display') != 'none'){					
 								if(defaults.ignoreColumn.indexOf(index) == -1){
-									var colPosition = startColPosition+ (index * 50);									
-									doc.text(colPosition,20, parseString($(this)));
+									var colPosition = startColPosition+ (index * 35);									
+									doc.text(colPosition,10, parseString($(this)));
 								}
 							}
 						});									
@@ -316,12 +316,12 @@ THE SOFTWARE.*/
 						page++;
 						startRowPosition=startRowPosition+10;
 					}
-					rowPosition=(startRowPosition + (rowCalc * 10)) - ((page -1) * 280);
+					rowPosition=(startRowPosition + (rowCalc * 5)) - ((page -1) * 50);
 						
 						$(this).filter(':visible').find('td').each(function(index,data) {
 							if ($(this).css('display') != 'none'){	
 								if(defaults.ignoreColumn.indexOf(index) == -1){
-									var colPosition = startColPosition+ (index * 50);									
+									var colPosition = startColPosition+ (index * 35);									
 									doc.text(colPosition,rowPosition, parseString($(this)));
 								}
 							}
